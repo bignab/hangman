@@ -1,0 +1,15 @@
+--- !ruby/object:Game
+phrase: !ruby/object:Phrase
+  phrase: eerie
+  correct_letters_guessed:
+  - e
+  - r
+  incorrect_letters_guessed:
+  - a
+  - b
+  output:
+  - e
+  - e
+  - r
+  - _
+  - e
