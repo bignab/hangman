@@ -11,6 +11,8 @@ class Game
     puts user_input
     @phrase.update_output(user_input)
     puts @phrase.generate_output
+    puts "Correct letters: #{@phrase.generate_letter_list('correct')}"
+    puts "Incorrect letters: #{@phrase.generate_letter_list('incorrect')}"
   end
 
   def user_input
@@ -103,6 +105,20 @@ class Phrase
       output_string += "#{letter} "
     end
     output_string
+  end
+
+  def generate_letter_list(list)
+    output_string = ''
+    if list == 'correct'
+      @correct_letters_guessed.each do |letter|
+        output_string += "#{letter}, "
+      end
+    else
+      @incorrect_letters_guessed.each do |letter|
+        output_string += "#{letter}, "
+      end
+    end
+    output_string[0..(output_string.length - 3)]
   end
 end
 
